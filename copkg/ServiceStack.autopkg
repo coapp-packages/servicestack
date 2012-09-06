@@ -1,0 +1,49 @@
+@import "outercurve.inc";
+@import "version.inc" ;
+
+// autopackage file for coapp
+
+package {
+    name: "Monolithic.ServiceStack";
+    display-name: "A Monolithic build of the ServiceStack Library";
+}
+
+metadata {
+    summary: "A modern fresh alternative to WCF. Code-first, convention-based, codegen-free. Promotes best-practices, high-performance REST & RPC web services. ";
+    description: @"ServiceStack is a library that is an alternative to WCF."; // or path to a file...
+    
+    author-version : "3.9.8";
+    bug-tracker: "https://github.com/ServiceStack/ServiceStack/issues";
+    stability : "0";
+    
+    licenses : {
+        NewBSD
+    };
+}
+
+compatability-policy {
+    minimum: "3.9.0.0";
+    maximum: "${OneLessThanCurrent}"; // this is the default
+}
+
+files[dlls] {
+    root: @"..\";
+    
+    include: {
+        "Monolithic.ServiceStack.dll",
+    };
+    
+    trim-path: minimal;
+};
+
+developer-library[refasms] { 
+    reference-assemblies : {
+        dlls
+    };
+}
+
+assemblies {
+    include : {
+        dlls
+    };
+}
