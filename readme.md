@@ -1,0 +1,1 @@
+# Monolithic ServiceStack package for CoApp.This package uses the ServiceStack nuget packages instead of building from scratch.## RequirementsRequires CoApp Devtools, Nuget and ILMerge to build a monolithic single ServiceStack assembly and package it up.## Buildinguse `ptk package` to build
